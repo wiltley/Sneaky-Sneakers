@@ -1,0 +1,16 @@
+.navbar-button {
+    width: 10%;
+    background-color: #A020F0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar-button-text {
+    height: 50%;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+}
