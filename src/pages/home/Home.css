@@ -1,0 +1,78 @@
+
+.home {
+    position: absolute;
+    height: 100vh; /* figure out why the height is scuffed */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-main-image {
+    height: 35vh;
+    width: 100vw;
+    background-color: #D3D3D3;
+}
+
+.home-text-section {
+    height: 20vh;
+    background-color: #FFFFE0;
+    width: 100vw;
+    text-align: center;
+}
+
+.home-text-section-flex-column {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.home-text-centerer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-text-section-main-text {
+    margin-top: 30px;
+    font-weight: 600;
+    text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 50%;
+    font-size: 3.0rem;
+}
+
+.home-text-section-sub-text {
+    font-color: #5A5A5A;
+    font-size: 1.5rem;
+    width: 75%;
+    font-weight: 200;
+    transform: translate(20%, 0%);
+}
+
+.home-gallery-section {
+    height: 45vh;
+    width: 100vw;
+    background-color: #FFB6C1;
+    display: flex;
+    flex-direction: column;
+}
+.home-gallery-section-header {
+    margin-bottom: 10px;
+    margin-left: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
+}
+
+.home-gallery {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
