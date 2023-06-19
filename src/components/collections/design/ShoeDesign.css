@@ -1,0 +1,25 @@
+
+.shoe-card {
+    margin-right: 40px;
+    margin-left: 40px;
+    height: 500px;
+    width: 400px;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.shoe-card-image-section {
+    height: 70%;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+.shoe-card-bottom-text {
+    height: calc(30% - 50px);
+    width: 100%;
+    background-color: yellow;
+    font-size: 1.5rem;
+    text-align:center;
+}

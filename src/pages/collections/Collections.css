@@ -1,0 +1,87 @@
+
+
+.collections {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    justify-content: flex-start;
+}
+
+.collections-header {
+    position: relative;
+    height: 12%;
+    width: 100%;
+    font-size: 2.4rem;
+    background-color: orange;
+    text-align: center;
+
+}
+
+.collections-header-text {
+    position: absolute;
+    top: 40%;
+    height: 100%;
+    width: 100%;
+}
+
+.collections-body {
+    height: 88%;
+    width: 100%;
+    display: flex;
+    background-color: grey;
+}
+
+.collections-body-designs-side {
+    width: 80%;
+    height: 100%;
+    background-color: purple;
+}
+
+.collections-design-side-flex {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: red;
+    gap: 40px;
+
+}
+
+.collections-body-filter-side {
+    width: 20%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.filter-options-style {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: blue;
+}
+
+.filter-options-price {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: yellow;
+}
+
+.filter-options-size {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: green;
+}
+
+.filter-type-text {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-left: 40px;
+    letter-spacing: 10px;
+    margin-bottom: 60px;
+}

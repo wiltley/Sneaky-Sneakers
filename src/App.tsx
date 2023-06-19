@@ -1,6 +1,9 @@
 import { Navbar} from './components/navbar/Navbar'
 import { Home } from './pages/home/Home'
+import { Collections } from './pages/collections/Collections'
 import "./App.css";
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return <>
@@ -9,10 +12,16 @@ function App() {
                 <Navbar />
             </div>
             <div>
-                <Home/>
+                <BrowserRouter >
+                    <Routes>
+                        <Route path="/" element={<Home/>}> </Route>
+                        <Route path="/collections" element={<Collections/>}> </Route>
+                    </Routes>
+                </BrowserRouter>
             </div>
         </div>
     </>
 }
+
 
 export default App;
