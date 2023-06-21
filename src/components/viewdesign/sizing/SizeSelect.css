@@ -1,0 +1,8 @@
+
+.size-select {
+    width: 90%;
+    max-height: 33vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}

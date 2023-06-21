@@ -11,9 +11,9 @@ export function ShoeDesign(props : shoeDesign) {
         <div className="shoe-card">
             <div className="shoe-card-image-section">
             </div>
-        <div className="shoe-card-bottom-text">
-            {props.shoeName} - {props.shoePrice}
-        </div>
+            <div className="shoe-card-bottom-text">
+                {props.shoeName} - {props.shoePrice}
+            </div>
         </div>
     </>
 
