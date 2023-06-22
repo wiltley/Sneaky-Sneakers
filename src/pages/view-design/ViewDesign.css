@@ -88,6 +88,7 @@
     background-color: black;
     border-radius: 5px;
     position: relative;
+    cursor: pointer;
 }
 
 .design-view-continue-button-text {

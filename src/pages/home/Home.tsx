@@ -7,6 +7,11 @@ export function Home() {
         <div className="home">
 
             <div className="home-main-image">
+                <div className="home-main-image-button">
+                    <div className="home-main-image-button-text">
+                        Shop
+                    </div>
+                </div>
             </div>
             <div className="home-text-section">
                 <div className="home-text-centerer">

@@ -16,7 +16,7 @@ export function NavbarButton(props : navbarButton) {
     return <>
         <div onClick={onClick} className="navbar-button">
             <div className="navbar-button-text">
-                TESTING
+                Text
             </div>
         </div>
     </>

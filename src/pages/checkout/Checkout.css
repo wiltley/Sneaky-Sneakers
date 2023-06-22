@@ -1,0 +1,53 @@
+
+.checkout {
+    width: 100vw;
+    height: 90vh;
+}
+
+.checkout-stage-box {
+    width: 100%;
+    height: 80px;
+    background-color: #DFDFDF;
+    margin-bottom: 30px;
+}
+
+.checkout-stage-text {
+    font-size: 1.6rem;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.checkout-flex {
+    display: flex;
+    margin-right: 15%;
+    margin-left: 15%;
+    width: 70%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.checkout-information-entry-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 5%;
+    width: 45%;
+    height: 80%;
+    margin-top: 80px;
+}
+
+.checkout-image-side {
+    margin-left: 5%;
+    width: 45%;
+    margin-top: 80px;
+    height: 80%;
+    background-color: black;
+}
+
+.checkout-double-textfield {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+
+

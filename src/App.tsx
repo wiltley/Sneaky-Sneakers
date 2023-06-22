@@ -2,6 +2,8 @@ import { Navbar} from './components/navbar/Navbar'
 import { Home } from './pages/home/Home'
 import { Collections } from './pages/collections/Collections'
 import { ViewDesign } from './pages/view-design/ViewDesign'
+import { Cart } from './pages/cart/Cart'
+import { Checkout } from './pages/checkout/Checkout'
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -18,6 +20,8 @@ function App() {
                         <Route path="/" element={<Home/>}> </Route>
                         <Route path="/collections" element={<Collections/>}> </Route>
                         <Route path="/viewdesign" element={<ViewDesign/>}> </Route>
+                        <Route path="/cart" element={<Cart/>}> </Route>
+                        <Route path="/checkout" element={<Checkout/>}> </Route>
                     </Routes>
                 </BrowserRouter>
             </div>
