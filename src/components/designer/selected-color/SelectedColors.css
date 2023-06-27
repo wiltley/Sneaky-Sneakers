@@ -1,0 +1,24 @@
+.selected-colors {
+    position: absolute;
+    right: -20px;
+    width: 200px;
+    height: 100%;
+    transform: translate(100%, 0%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-weight: 200;
+}
+
+.selected-options-main {
+    font-size: 1.3rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.selected-options-underline {
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    background-color: black;
+}

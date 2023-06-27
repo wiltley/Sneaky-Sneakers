@@ -1,0 +1,57 @@
+.designer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.designer-main-info-area {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    background-color: white;
+    transform: translate(50%, -50%);
+}
+
+.designer-right-option-button {
+    width: 30px;
+    height: 30%;
+    background-image: url('../../../public/rightarrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.designer-current-text {
+    width: 300px;
+    text-align: center;
+    height: 100%;
+    display: inline-block;
+}
+
+.designer-current-option {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.designer-current-stage-indicator-text {
+    margin-left: 10px;
+    display: inline-block;
+    font-color: #d3d3d3;
+    font-size: 15px;
+}
+
+.designer-left-option-button {
+    width: 30px;
+    height: 30%;
+    background-image: url('../../../public/leftarrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    cursor: pointer;
+}

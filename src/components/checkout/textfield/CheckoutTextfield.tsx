@@ -10,7 +10,10 @@ export function CheckoutTextfield() {
 
 
     return <>
-            <input className="checkout-textfield" type="text" value={text} onChange={handleChange} />
+            <div className="checkout-textfield-flex">
+                <div className="checkout-field-name">123</div>
+                <input className="checkout-textfield" type="text" value={text} onChange={handleChange} />
+            </div>
     </>
 
 }
