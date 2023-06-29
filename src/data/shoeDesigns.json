@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "AF1s",
+      "style": "Lifestyle",
+      "description": "Description for Item 1",
+      "price": 120
+    },
+    {
+      "id": 2,
+      "name": "AF2s",
+      "style": "Lifestyle",
+      "description": "Description for Item 2",
+      "price": 150
+    },
+    {
+      "id": 3,
+      "name": "AF3s",
+      "style": "Lifestyle",
+      "description": "Description for Item 3",
+      "price": 200
+    },
+    {
+      "id": 4,
+      "name": "AF4s",
+      "style": "Lifestyle",
+      "description": "Description for Item 4",
+      "price": 300
+    }
+  ]
+}
+

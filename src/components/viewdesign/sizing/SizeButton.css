@@ -25,3 +25,7 @@
 .size-button:hover {
     background-color: #868484;
 }
+
+.size-button.active {
+    background-color: #ADD8E6;
+}

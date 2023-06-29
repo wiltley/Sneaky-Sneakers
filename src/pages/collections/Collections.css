@@ -6,7 +6,6 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background-color: green;
     justify-content: flex-start;
 }
 
@@ -14,8 +13,7 @@
     position: relative;
     height: 12%;
     width: 100%;
-    font-size: 2.4rem;
-    background-color: orange;
+    font-size: 1.8rem;
     text-align: center;
 
 }
@@ -31,13 +29,12 @@
     height: 88%;
     width: 100%;
     display: flex;
-    background-color: grey;
 }
 
 .collections-body-designs-side {
     width: 80%;
     height: 100%;
-    background-color: purple;
+    padding-bottom: 100px;
 }
 
 .collections-design-side-flex {
@@ -46,7 +43,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: red;
     gap: 40px;
 
 }
@@ -63,25 +59,23 @@
 .filter-options-style {
     flex-shrink: 0;
     width: 100%;
-    background-color: blue;
 }
 
 .filter-options-price {
     flex-shrink: 0;
     width: 100%;
-    background-color: yellow;
 }
 
 .filter-options-size {
     flex-shrink: 0;
     width: 100%;
-    background-color: green;
 }
 
 .filter-type-text {
-    font-size: 1.7rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
     margin-left: 40px;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     margin-bottom: 60px;
+
 }

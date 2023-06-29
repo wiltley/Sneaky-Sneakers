@@ -24,6 +24,17 @@
     border-color: black;
 }
 
+.design-top-info-section {
+    position: absolute;
+    right: -20px;
+    height: 100%;
+    width: 300px;
+    transform: translate(100%, 0%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
 .design-bottom {
     height: 30%;
     width: 100%;

@@ -1,20 +1,20 @@
-.selected-colors {
-    margin-top: 20px;
+.selected-shoe {
     width: 200px;
-    height: 30%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    text-align: left;
     font-weight: 200;
 }
 
-.selected-options-main {
+.selected-shoe-main {
     font-size: 1.3rem;
     font-weight: 400;
     position: relative;
 }
 
-.selected-options-underline {
+.selected-shoe-underline {
     position: absolute;
     width: 80%;
     height: 1px;

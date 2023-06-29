@@ -1,25 +1,21 @@
-
 .shoe-card {
-    margin-right: 40px;
-    margin-left: 40px;
-    height: 500px;
-    width: 400px;
-    background-color: grey;
+    flex: 0 0 25%; /* Set the flex basis to maintain the width */
+    margin: 0 10px; /* Adjust the margins as desired */
     display: flex;
     flex-direction: column;
+    background-color: grey;
+    cursor: pointer;
+    max-height: 400px;
 }
 
 .shoe-card-image-section {
-    height: 70%;
-    width: 100%;
-    background-color: white;
-    margin-bottom: 50px;
+    flex-grow: 1;
+    margin-bottom: 20px; /* Adjust the spacing as desired */
 }
 
 .shoe-card-bottom-text {
-    height: calc(30% - 50px);
-    width: 100%;
-    background-color: yellow;
-    font-size: 1.5rem;
-    text-align:center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 300;
 }

@@ -1,0 +1,63 @@
+
+.description {
+    margin-top: 50px;
+    height: 200px;
+    width: 70%;
+    transform: translate(25%, 0%);
+    position: relative;
+}
+
+.description-top-line {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: black;
+    height: 1px;
+    width: 100%;
+}
+
+.description-bottom-line {
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    background-color: black;
+    height: 1px;
+    width: 100%;
+}
+
+.description-header-text {
+
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.description-content-text {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 100%;
+    font-size: 14px;
+    text-indent: -10000px;
+}
+
+.description-content-text.active {
+    text-indent: 0px;
+
+}
+
+.description-toggle-button {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    right: 10px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.description-bottom-line.active{
+    top: 100%;
+}

@@ -20,10 +20,10 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home/>}> </Route>
                         <Route path="/collections" element={<Collections/>}> </Route>
-                        <Route path="/viewdesign" element={<ViewDesign/>}> </Route>
+                        <Route path="/viewdesign/:shoeId" element={<ViewDesign/>}> </Route>
                         <Route path="/cart" element={<Cart/>}> </Route>
                         <Route path="/checkout" element={<Checkout/>}> </Route>
-                        <Route path="/design" element={<Design/>}> </Route>
+                        <Route path="/design/:shoeId/:shoeSize" element={<Design/>}> </Route>
                     </Routes>
                 </BrowserRouter>
             </div>

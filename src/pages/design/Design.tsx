@@ -1,8 +1,12 @@
 import "./Design.css"
 import { Designer } from '../../components/designer/Designer'
 import { useState } from 'react'
+import { useParams } from 'react-router';
 import { ColorSelector } from "../../components/designer/color-selector/ColorSelector";
 import { SelectedColors } from "../../components/designer/selected-color/SelectedColors";
+import { SelectedShoe } from "../../components/designer/selected-shoe/SelectedShoe";
+import shoeDesigns from '../../data/shoeDesigns.json';
+import { ShoeItem } from '../../types/types';
 
 export interface DesignOptions {
     sole: string;
@@ -16,6 +20,16 @@ export interface DesignOptions {
 
 export function Design() {
     let maxOptions = 6;
+
+
+    let { shoeId, shoeSize } = useParams<{ shoeId: string, shoeSize: string}>();
+    if (shoeId === undefined) {
+        shoeId = "0";
+    }
+
+    const parsedShoeId = parseInt(shoeId, 10);
+
+    const shoeData = shoeDesigns.items.find((item) => item.id === parsedShoeId);
 
     const [indicator, setIndicator] = useState(0);
 
@@ -109,9 +123,11 @@ export function Design() {
         <div className="design">
             <div className="design-top">
                 <div className="design-top-image-section">
-                    <SelectedColors options={selectedOptions} />
+                    <div className="design-top-info-section">
+                        <SelectedShoe name={shoeData?.name} size={shoeSize}/>
+                        <SelectedColors options={selectedOptions} />
+                    </div>
                 </div>
-
             </div>
 
             <div className="design-bottom">
