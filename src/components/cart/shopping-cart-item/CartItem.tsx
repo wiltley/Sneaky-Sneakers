@@ -4,13 +4,14 @@ import { SelectedColors } from '../../designer/selected-color/SelectedColors'
 
 interface cartItemProps {
     item: Item,
+    id: number,
+    setRemove: Function;
 }
 
 export function CartItem(props: cartItemProps) {
 
-    const removeFromCart = (event : React.MouseEvent<HTMLDivElement>) => {
-        // I should probably add a confirmation here but I cba...
-        event.preventDefault();
+    const onClick = () => {
+        props.setRemove(props.id);
     }
 
     return <>
@@ -23,8 +24,10 @@ export function CartItem(props: cartItemProps) {
             </div>
 
             <div className="cart-selected-options">
-                <SelectedColors options={props.item.selectedOptions}/>
+                <SelectedColors options={props.item.selectedOptions} />
             </div>
+
+            <div onClick={onClick} className="cart-item-remove-button"></div>
         </div>
     </>
 }

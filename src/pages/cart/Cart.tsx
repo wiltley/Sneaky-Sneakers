@@ -1,7 +1,10 @@
 import './Cart.css'
 import { CartItem } from '../../components/cart/shopping-cart-item/CartItem'
 import { CartItem as Item } from '../../types/types';
+import { CartItemRemove } from '../../components/cart/cart-item-remove-popup/CartItemRemove';
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 export function Cart() {
     const storedItemsString = localStorage.getItem("cartItems");
     let cartItems: Item[] = [];
@@ -11,7 +14,9 @@ export function Cart() {
     }
 
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [maxHeight] = useState(0); // Maximum height where you want to restrict the element
+    const [removePopUpState, setRemovePopUp] = useState(-1);
+    const [maxHeight] = useState(-1); // Maximum height where you want to restrict the element
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,20 +42,38 @@ export function Cart() {
         return sum;
     }
 
+    const removeCartItem = (index : number) => {
+        setRemovePopUp(index);
+    }
+
+    const removePopUp = () => {
+        if(removePopUpState !== -1) {
+            return <CartItemRemove indexToRemove={removePopUpState} />
+        }
+        else return <></>
+
+    }
+
+    const goToCheckout = (event: React.MouseEvent<HTMLDivElement>) => {
+        event.preventDefault();
+        navigate(`/checkout`);
+
+    }
     return <>
+        {removePopUp()}
         <div className="cart">
             <div className="cart-cart-side">
                 <div className="cart-your-cart-text">Your Cart</div>
                 <div className="cart-mini-summary">Total ({cartItems.length} Items) - ${calculateSum()}</div>
                 <div className="cart-items">
                     {cartItems.map((item, index) => (
-                        <CartItem key={index} item={item}/>
+                        <CartItem key={index} item={item} id={index} setRemove={removeCartItem}/>
                     ))}
                 </div>
             </div>
             <div className={`cart-info-side ${scrollPosition > maxHeight ? "scrolled" : ""}`}>
                 <div className="cart-continue-button">
-                    <div className="cart-continue-button-text">
+                    <div onClick={goToCheckout} className="cart-continue-button-text">
                         Checkout
                     </div>
                 </div>
