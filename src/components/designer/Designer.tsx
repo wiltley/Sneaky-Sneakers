@@ -1,6 +1,6 @@
 import './Designer.css';
 import { useState } from 'react'
-import { DesignOptions } from '../../pages/design/Design'
+import { DesignOptions } from '../../types/types'
 
 interface DesignerInfo {
     indicator: number;

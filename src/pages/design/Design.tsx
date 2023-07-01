@@ -6,23 +6,15 @@ import { ColorSelector } from "../../components/designer/color-selector/ColorSel
 import { SelectedColors } from "../../components/designer/selected-color/SelectedColors";
 import { SelectedShoe } from "../../components/designer/selected-shoe/SelectedShoe";
 import shoeDesigns from '../../data/shoeDesigns.json';
-import { ShoeItem } from '../../types/types';
+import { DesignOptions, ShoeItem, CartItem } from "../../types/types";
 
-export interface DesignOptions {
-    sole: string;
-    laces: string;
-    toecap: string;
-    outshoe: string;
-    tongue: string;
-    collar: string;
-}
 
 
 export function Design() {
     let maxOptions = 6;
 
 
-    let { shoeId, shoeSize } = useParams<{ shoeId: string, shoeSize: string}>();
+    let { shoeId, shoeSize } = useParams<{ shoeId: string, shoeSize: string }>();
     if (shoeId === undefined) {
         shoeId = "0";
     }
@@ -54,7 +46,7 @@ export function Design() {
         }
     }
 
-    const currentOption = () :string => {
+    const currentOption = (): string => {
         switch (indicator) {
             case 0:
                 return "Sole"
@@ -118,13 +110,33 @@ export function Design() {
     };
 
 
+    const confirmDesign = (event: React.MouseEvent<HTMLDivElement>) => {
+        // pop up confirm before somehow
+        //
+        const storedItemsString = localStorage.getItem("cartItems");
+        let cartItems: CartItem[] = [];
+        if (storedItemsString) {
+            cartItems = JSON.parse(storedItemsString);
+        }
+
+        event.preventDefault();
+        const itemToAdd: CartItem = {
+            name: shoeData?.name,
+            selectedOptions: selectedOptions,
+            size: shoeSize,
+            price: shoeData?.price,
+        };
+
+        cartItems.push(itemToAdd);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
 
     return <>
         <div className="design">
             <div className="design-top">
                 <div className="design-top-image-section">
                     <div className="design-top-info-section">
-                        <SelectedShoe name={shoeData?.name} size={shoeSize}/>
+                        <SelectedShoe name={shoeData?.name} size={shoeSize} />
                         <SelectedColors options={selectedOptions} />
                     </div>
                 </div>
@@ -147,7 +159,7 @@ export function Design() {
                         <ColorSelector setColor={setColor} />
                     </div>
 
-                    <div className="design-bottom-continue-area">
+                    <div onClick={confirmDesign} className="design-bottom-continue-area">
                         <div className="design-complete-button">
                             <div className="design-complete-button-text">
                                 Complete

@@ -4,23 +4,36 @@
     display: flex;
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 
 .cart-cart-side {
-    width: 65%;
-    height: 100%;
+    width: 60vw;
     display: flex;
     flex-direction: column;
-    margin-left: 10vw;
+    padding-left: 10vw;
 }
 
 .cart-info-side {
-    padding-left: 100px;
-    width: 35%;
-    height: 100%;
-    margin-right: 10vw;
+    left: 70vw;
+    width: 30vw;
+    height: 380px;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
+}
+
+.cart-info-side.scrolled{
+  position: fixed;
+  top: 210px; /* Maximum height where you want to restrict the element */
+}
+
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2vh;
 }
 
 .cart-your-cart-text {
@@ -53,7 +66,7 @@
 }
 
 .cart-order-summary-text {
-    margin-top: 80px;
+    margin-top: 40px;
     font-size: 1.4rem;
     font-weight: 600;
     color: black;
@@ -61,6 +74,14 @@
 }
 
 .cart-mini-details {
+    width: 100%;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.cart-mini-detail {
     margin-top: 10px;
     font-size: 1.1rem;
     font-weight: 300;

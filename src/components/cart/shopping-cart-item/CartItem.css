@@ -7,6 +7,7 @@
     border-style: solid;
     border-color: black;
     border-width: 1px;
+    margin-bottom: 2vh;
 }
 
 .cart-item-image {
@@ -16,9 +17,16 @@
 }
 
 .cart-item-info {
-    margin-left: 80px;
     height: 100%;
+    width: 10%;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.cart-selected-options {
+    height: 100%;
+    width: calc(90% - 225px);
+    transform: translate(0%, 40%);
 }

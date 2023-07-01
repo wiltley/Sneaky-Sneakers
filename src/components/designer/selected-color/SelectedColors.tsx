@@ -1,5 +1,5 @@
 import './SelectedColors.css'
-import { DesignOptions } from '../../../pages/design/Design'
+import { DesignOptions } from '../../../types/types'
 import { MiniColor } from './MiniColor';
 
 interface selectedColorsProps {
