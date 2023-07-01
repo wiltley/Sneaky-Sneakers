@@ -7,6 +7,7 @@ import { SelectedColors } from "../../components/designer/selected-color/Selecte
 import { SelectedShoe } from "../../components/designer/selected-shoe/SelectedShoe";
 import shoeDesigns from '../../data/shoeDesigns.json';
 import { DesignOptions, ShoeItem, CartItem } from "../../types/types";
+import { DesignConfirmPopUp } from "../../components/designer/confirm-pop-up/DesignConfirmPopUp";
 
 
 
@@ -24,6 +25,8 @@ export function Design() {
     const shoeData = shoeDesigns.items.find((item) => item.id === parsedShoeId);
 
     const [indicator, setIndicator] = useState(0);
+
+    const [showConfirmPopUp, setShowConfirmPopUp] = useState(false);
 
     const [selectedOptions, setOption] = useState<DesignOptions>({
         sole: "white",
@@ -129,9 +132,22 @@ export function Design() {
 
         cartItems.push(itemToAdd);
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        setShowConfirmPopUp(true);
+    }
+
+    const ConfirmPopUp = () => {
+
+        if (showConfirmPopUp) {
+            return <>
+                <DesignConfirmPopUp />
+            </>
+        }
+        return <> </>
     }
 
     return <>
+        {ConfirmPopUp()}
         <div className="design">
             <div className="design-top">
                 <div className="design-top-image-section">
