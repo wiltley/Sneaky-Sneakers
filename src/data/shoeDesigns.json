@@ -2,31 +2,52 @@
   "items": [
     {
       "id": 1,
-      "name": "AF1s",
+      "name": "Air Jordan 1",
       "style": "Lifestyle",
       "description": "Description for Item 1",
-      "price": 120
+      "price": 300
     },
     {
       "id": 2,
-      "name": "AF2s",
-      "style": "Hypebeast",
+      "name": "Air Force 1",
+      "style": "Lifestyle",
       "description": "Description for Item 2",
       "price": 150
     },
     {
       "id": 3,
-      "name": "AF3s",
-      "style": "Running",
+      "name": "Bape Sta",
+      "style": "Hypebeast",
       "description": "Description for Item 3",
-      "price": 200
+      "price": 500 
     },
     {
       "id": 4,
-      "name": "AF4s",
+      "name": "Kobe 8",
       "style": "Basketball",
       "description": "Description for Item 4",
-      "price": 300
+      "price": 900
+    },
+    {
+      "id": 5,
+      "name": "Yeezy Boost",
+      "style": "Hypebeast",
+      "description": "Description for Item 4",
+      "price": 400
+    },
+    {
+      "id": 6,
+      "name": "Ramone Highs",
+      "style": "Lifestyle",
+      "description": "Baby, I'm the fashion demon",
+      "price": 600
+    },
+    {
+      "id": 7,
+      "name": "Foam Runners",
+      "style": "Running",
+      "description": "Baby, I'm the fashion demon",
+      "price": 250
     }
   ]
 }
