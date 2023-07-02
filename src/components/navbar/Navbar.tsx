@@ -40,11 +40,11 @@ export function Navbar() {
             </div>
 
             <div className="navbar-buttons-section">
-                <NavbarButton link="/"/>
-                <NavbarButton link="/collections"/>
-                <NavbarButton link="/"/>
-                <NavbarButton link="/"/>
-                <NavbarButton link="/"/>
+                <NavbarButton label="About" link="/about"/>
+                <NavbarButton label="Collections" link="/collections"/>
+                <NavbarButton label ="Home" link="/"/>
+                <NavbarButton label ="News" link="/"/>
+                <NavbarButton label="Community" link="/"/>
 
             </div>
         </div>

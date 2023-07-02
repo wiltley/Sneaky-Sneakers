@@ -5,6 +5,7 @@ import { ViewDesign } from './pages/view-design/ViewDesign'
 import { Cart } from './pages/cart/Cart'
 import { Checkout } from './pages/checkout/Checkout'
 import { Design } from './pages/design/Design'
+import { About } from './pages/about/About';
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -24,6 +25,7 @@ function App() {
                         <Route path="/cart" element={<Cart/>}> </Route>
                         <Route path="/checkout" element={<Checkout/>}> </Route>
                         <Route path="/design/:shoeId/:shoeSize" element={<Design/>}> </Route>
+                        <Route path="/about" element={<About/>}> </Route>
                     </Routes>
                 </BrowserRouter>
             </div>

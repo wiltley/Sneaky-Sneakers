@@ -32,7 +32,7 @@ export function Home() {
             </div>
             <div className="home-gallery-section">
                 <div className="home-gallery-section-header">
-                Latest Releases
+                Latest/Upcoming Releases
                 </div>
                 <div className="home-gallery">
                     < GalleryImage />

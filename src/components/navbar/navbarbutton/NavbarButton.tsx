@@ -3,6 +3,7 @@ import './NavbarButton.css'
 
 interface navbarButton {
     link: string;
+    label: string;
 }
 
 export function NavbarButton(props : navbarButton) {
@@ -16,7 +17,7 @@ export function NavbarButton(props : navbarButton) {
     return <>
         <div onClick={onClick} className="navbar-button">
             <div className="navbar-button-text">
-                Text
+                {props.label}
             </div>
         </div>
     </>
