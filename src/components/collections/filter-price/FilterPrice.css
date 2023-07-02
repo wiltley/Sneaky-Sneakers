@@ -1,0 +1,13 @@
+.filter-price {
+    font-size: 1.0rem;
+    height: 150px;
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-price-display {
+    height: 100px;
+    width: 90%;
+}

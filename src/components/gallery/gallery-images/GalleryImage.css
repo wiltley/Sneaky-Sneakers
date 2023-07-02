@@ -1,10 +1,14 @@
 
 
 .gallery-image {
-    min-width: 100px;
-    height: 350px;
-    width: 350px;
+    max-height: 250px;
+    flex: 0 0 22.5%; /* Set the flex basis to maintain the width */
+    margin: 0 10px; /* Adjust the margins as desired */
+    display: flex;
     border-color: black;
     border-style: solid;
     border-width: 1px;
+    background-image: url('../../../../public/placeholder.png');
+    background-size: cover;
+    cursor: pointer;
 }

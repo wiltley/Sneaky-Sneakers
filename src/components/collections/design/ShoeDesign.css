@@ -3,14 +3,15 @@
     margin: 0 10px; /* Adjust the margins as desired */
     display: flex;
     flex-direction: column;
-    background-color: grey;
     cursor: pointer;
-    max-height: 400px;
+    max-height: 300px;
 }
 
 .shoe-card-image-section {
     flex-grow: 1;
     margin-bottom: 20px; /* Adjust the spacing as desired */
+    background-image: url("../../../../public/placeholder.png");
+    background-size: cover;
 }
 
 .shoe-card-bottom-text {

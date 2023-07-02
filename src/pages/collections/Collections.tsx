@@ -2,16 +2,46 @@ import './Collections.css'
 import shoeDesigns from '../../data/shoeDesigns.json';
 import { ShoeDesign } from '../../components/collections/design/ShoeDesign'
 import { ShoeItem } from '../../types/types';
+import { FilterStyle } from '../../components/collections/filter-style/FilterStyle';
+import { FilterPrice } from '../../components/collections/filter-price/FilterPrice';
+import { useState } from 'react';
 
 
 interface ShoeDesignsData {
-  items: ShoeItem[];
+    items: ShoeItem[];
 }
 
 
 export function Collections() {
 
     const { items }: ShoeDesignsData = shoeDesigns;
+
+    const [shownItems, setShownItems] = useState(items);
+
+    const [activeStyleFilter, setActiveStyleFilter] = useState("");
+
+    const filterByStyle = (filterBy : string) => {
+
+        if(filterBy === ""){
+            setShownItems(items);
+            setActiveStyleFilter("");
+            return;
+        } else {
+            const filteredItems = items.filter((item) => {
+                return item.style === filterBy;
+            });
+            setShownItems(filteredItems);
+            setActiveStyleFilter(filterBy);
+        }
+    }
+
+    const filterByPrice = (priceRange: [number, number]) => {
+        const filteredItems = items.filter((item) => {
+            return item.price >= priceRange[0] && item.price <= priceRange[1];
+        });
+        setActiveStyleFilter("");
+        setShownItems(() => filteredItems);
+    };
 
     return <>
 
@@ -27,22 +57,26 @@ export function Collections() {
                     <div className="filter-options-style">
                         <div className="filter-type-text">
                             Style
+
+                            <FilterStyle activeStyleFilter={activeStyleFilter} filterStyle={filterByStyle} />
+
                         </div>
                     </div>
                     <div className="filter-options-price">
                         <div className="filter-type-text">
                             Price
+
+                            <FilterPrice filterPrice={filterByPrice} />
                         </div>
                     </div>
                     <div className="filter-options-size">
                         <div className="filter-type-text">
-                            Sizing
                         </div>
                     </div>
                 </div>
                 <div className="collections-body-designs-side">
                     <div className="collections-design-side-flex">
-                        {shoeDesigns.items.map((shoe) => (
+                        {shownItems.map((shoe) => (
                             <ShoeDesign
                                 key={shoe.id}
                                 shoeId={shoe.id}

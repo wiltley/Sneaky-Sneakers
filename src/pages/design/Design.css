@@ -20,8 +20,10 @@
     position: relative;
     border-style: solid;
     border-radius: 1%;
-    border-size: 1px;
+    border-size: 0.5px;
     border-color: black;
+    background-image: url('../../../public/placeholder.png');
+    background-size: cover;
 }
 
 .design-top-info-section {

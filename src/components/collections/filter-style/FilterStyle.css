@@ -1,0 +1,25 @@
+
+.filter-style {
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.filter-option {
+    height: 30px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.filter-option-text-style {
+    font-size: 1.0rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.filter-option-text-style.active {
+    color: green;
+    font-size: 1.2rem;
+}
+
+

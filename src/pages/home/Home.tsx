@@ -1,14 +1,19 @@
 import "./Home.css"
 import { GalleryImage } from '../../components/gallery/gallery-images/GalleryImage'
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
+    const navigate = useNavigate();
+
+    const mainShopButton = (event : React.MouseEvent<HTMLDivElement>) => {
+        navigate(`/collections`);
+    }
 
     return <>
         <div className="home">
-
             <div className="home-main-image">
                 <div className="home-main-image-button">
-                    <div className="home-main-image-button-text">
+                    <div onClick={mainShopButton} className="home-main-image-button-text">
                         Shop
                     </div>
                 </div>
@@ -17,17 +22,17 @@ export function Home() {
                 <div className="home-text-centerer">
                     <div className="home-text-section-flex">
                         <div className="home-text-section-main-text">
-                            TEST TEXT OWJDOJQWJDOQ qwdijqoiwdjqwd qijwdojqwd
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </div>
                         <div className="home-text-section-sub-text">
-                            TEST TEXT OWJDOJQWJDOQ qwdijqoiwdjqwd qijwdojqwd
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </div>
                     </div>
                 </div>
             </div>
             <div className="home-gallery-section">
                 <div className="home-gallery-section-header">
-                TEXT
+                Latest Releases
                 </div>
                 <div className="home-gallery">
                     < GalleryImage />

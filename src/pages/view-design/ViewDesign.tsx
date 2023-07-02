@@ -40,6 +40,12 @@ export function ViewDesign() {
         }
     }
 
+    const miniPreview = () => {
+        return <>
+            <div className="design-mini-preview"></div>
+        </>
+    }
+
     return <>
         <div className="design-view">
             <div className="design-view-flex">
@@ -49,6 +55,10 @@ export function ViewDesign() {
                         <div className="design-image-section-container">
                         </div>
                         <div className="design-image-previews-section">
+                            {miniPreview()}
+                            {miniPreview()}
+                            {miniPreview()}
+                            {miniPreview()}
                         </div>
                     </div>
                     <Description description={shoeData.description} />
