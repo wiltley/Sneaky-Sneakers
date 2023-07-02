@@ -6,7 +6,7 @@ import { ColorSelector } from "../../components/designer/color-selector/ColorSel
 import { SelectedColors } from "../../components/designer/selected-color/SelectedColors";
 import { SelectedShoe } from "../../components/designer/selected-shoe/SelectedShoe";
 import shoeDesigns from '../../data/shoeDesigns.json';
-import { DesignOptions, ShoeItem, CartItem } from "../../types/types";
+import { DesignOptions, CartItem } from "../../types/types";
 import { DesignConfirmPopUp } from "../../components/designer/confirm-pop-up/DesignConfirmPopUp";
 
 

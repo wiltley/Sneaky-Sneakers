@@ -9,7 +9,6 @@ export function Cart() {
     const storedItemsString = localStorage.getItem("cartItems");
     let cartItems: Item[] = [];
     if (storedItemsString) {
-        const storedItems: Item[] = JSON.parse(storedItemsString);
         cartItems = JSON.parse(storedItemsString);
     }
 

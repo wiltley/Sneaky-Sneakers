@@ -5,10 +5,6 @@ import shoeDesigns from '../../data/shoeDesigns.json';
 import { Description } from '../../components/viewdesign/description/Description';
 import { useNavigate } from 'react-router-dom';
 
-interface RouteParams {
-  shoeId: string;
-}
-
 export function ViewDesign() {
 
     const navigate = useNavigate();

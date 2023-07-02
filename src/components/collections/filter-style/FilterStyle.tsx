@@ -1,6 +1,4 @@
 import "./FilterStyle.css";
-import { useState, useEffect } from "react";
-
 
 interface filterStyleProps {
     filterStyle: Function;
@@ -15,6 +13,7 @@ export function FilterStyle(props: filterStyleProps) {
     const filterOption = (filterBy: string) => {
 
         const onClick = (event: React.MouseEvent<HTMLDivElement>) => {
+            event.preventDefault();
 
             if (filterBy === props.activeStyleFilter) {
                 props.filterStyle("");
