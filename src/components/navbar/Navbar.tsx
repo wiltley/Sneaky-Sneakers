@@ -1,5 +1,7 @@
 import './Navbar.css'
 import { NavbarButton } from './navbarbutton/NavbarButton'
+import { useEffect } from 'react'
+import { NavbarScroller } from './navbar-scroller/NavbarScroller'
 
 export function Navbar() {
 
@@ -23,8 +25,7 @@ export function Navbar() {
 
     return <>
         <div className="navbar">
-            <div className="navbar-scroller-section">
-            </div>
+            <NavbarScroller />
 
             <div className="navbar-icons-section">
                     <div className="navbar-icons-socials-flex">

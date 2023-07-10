@@ -60,6 +60,10 @@
     cursor: pointer;
 }
 
+.cart-continue-button.disable {
+    cursor: not-allowed;
+}
+
 .cart-continue-button-text {
     color: white;
     text-align: center;

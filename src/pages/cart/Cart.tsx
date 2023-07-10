@@ -55,9 +55,31 @@ export function Cart() {
 
     const goToCheckout = (event: React.MouseEvent<HTMLDivElement>) => {
         event.preventDefault();
+
+        if (cartItems.length === 0) {
+            return
+        }
+
         navigate(`/checkout`);
 
     }
+
+    const checkoutButtonText = () => {
+
+        if (cartItems.length === 0) {
+            return <> Cart Empty / No Checkout </>
+        }
+        return <> Checkout </>
+
+    }
+
+    const orderSummaryIsEmpty = () => {
+        if (cartItems.length === 0) {
+            return <> N/A </>
+        }
+
+    }
+
     return <>
         {removePopUp()}
         <div className="cart">
@@ -71,9 +93,9 @@ export function Cart() {
                 </div>
             </div>
             <div className={`cart-info-side ${scrollPosition > maxHeight ? "scrolled" : ""}`}>
-                <div className="cart-continue-button">
-                    <div onClick={goToCheckout} className="cart-continue-button-text">
-                        Checkout
+                <div className={`cart-continue-button ${cartItems.length === 0 ? "disable" : ""}`}>
+                    <div onClick={goToCheckout} className={`cart-continue-button-text`}>
+                        {checkoutButtonText()}
                     </div>
                 </div>
                 <div className="cart-order-summary-text">
@@ -83,6 +105,7 @@ export function Cart() {
                     {cartItems.map((item, index) => (
                         <div className="cart-mini-detail">{item.name} - C$ {item.price}</div>
                     ))}
+                    {orderSummaryIsEmpty()}
                 </div>
             </div>
         </div>
