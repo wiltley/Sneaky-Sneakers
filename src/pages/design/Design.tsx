@@ -8,6 +8,8 @@ import { SelectedShoe } from "../../components/designer/selected-shoe/SelectedSh
 import shoeDesigns from '../../data/shoeDesigns.json';
 import { DesignOptions, CartItem } from "../../types/types";
 import { DesignConfirmPopUp } from "../../components/designer/confirm-pop-up/DesignConfirmPopUp";
+import { ShareDesign } from "../../components/designer/share-design/ShareDesign";
+import { CommunityItem } from "../../types/types";
 
 
 
@@ -15,7 +17,7 @@ export function Design() {
     let maxOptions = 6;
 
 
-    let { shoeId, shoeSize } = useParams<{ shoeId: string, shoeSize: string }>();
+    let { shoeId, shoeSize, customId } = useParams<{ shoeId: string, shoeSize: string, customId: string }>();
     if (shoeId === undefined) {
         shoeId = "0";
     }
@@ -28,14 +30,43 @@ export function Design() {
 
     const [showConfirmPopUp, setShowConfirmPopUp] = useState(false);
 
-    const [selectedOptions, setOption] = useState<DesignOptions>({
-        sole: "white",
-        laces: "white",
-        toecap: "white",
-        outshoe: "white",
-        tongue: "white",
-        collar: "white"
-    });
+    const [showShareDesignPopUp, setShowShareDesignPopUp] = useState(false);
+
+    const setDesignOptions = () : DesignOptions => {
+        if (customId === undefined) {
+            return {
+                sole: "white",
+                laces: "white",
+                toecap: "white",
+                outshoe: "white",
+                tongue: "white",
+                collar: "white"
+            }
+        }
+
+        const communityItemsString = localStorage.getItem("communityItems");
+
+        let communityItems: CommunityItem[] = [];
+
+        if (communityItemsString) {
+            communityItems = JSON.parse(communityItemsString);
+        }
+        const parsedCustomId = parseInt(customId, 10);
+
+        return {
+            sole: communityItems[parsedCustomId].selectedOptions.sole,
+            laces: communityItems[parsedCustomId].selectedOptions.laces,
+            toecap: communityItems[parsedCustomId].selectedOptions.toecap,
+            outshoe: communityItems[parsedCustomId].selectedOptions.outshoe,
+            tongue: communityItems[parsedCustomId].selectedOptions.tongue,
+            collar: communityItems[parsedCustomId].selectedOptions.collar
+        }
+    }
+
+    const [selectedOptions, setOption] = useState<DesignOptions>(setDesignOptions()
+    );
+
+
 
     // Needs to take either 1 or -1
     const setCurrentOption = (change: number) => {
@@ -67,6 +98,7 @@ export function Design() {
                 return "Default"
         }
     }
+
 
 
     const setColor = (color: string) => {
@@ -112,7 +144,6 @@ export function Design() {
         }
     };
 
-
     const confirmDesign = (event: React.MouseEvent<HTMLDivElement>) => {
         // pop up confirm before somehow
         //
@@ -146,8 +177,39 @@ export function Design() {
         return <> </>
     }
 
+    const shareDesignClick = (event : React.MouseEvent<HTMLDivElement>) => {
+        event.preventDefault();
+        setShowShareDesignPopUp(true)
+        const communityItemsString = localStorage.getItem("communityItems");
+        let communityItems: CommunityItem[] = [];
+        if (communityItemsString) {
+            communityItems = JSON.parse(communityItemsString);
+        }
+
+        event.preventDefault();
+        const itemToAdd: CommunityItem = {
+            name: shoeData?.name,
+            selectedOptions: selectedOptions,
+            price: shoeData?.price,
+            shoeId: parsedShoeId 
+        };
+
+        communityItems.push(itemToAdd);
+        localStorage.setItem("communityItems", JSON.stringify(communityItems));
+    }
+
+
+    const shareDesignPopUp = () => {
+        if (showShareDesignPopUp) {
+            return <>
+                <ShareDesign closeModal={setShowShareDesignPopUp} />
+            </>
+        }
+    }
+
     return <>
         {ConfirmPopUp()}
+        {shareDesignPopUp()}
         <div className="design">
             <div className="design-top">
                 <div className="design-top-image-section">
@@ -164,7 +226,7 @@ export function Design() {
                         <div className="design-share">
                             <div className="design-share-icon">
                             </div>
-                            <div className="design-share-text">
+                            <div onClick={shareDesignClick} className="design-share-text">
                                 Share your design!
                             </div>
                         </div>

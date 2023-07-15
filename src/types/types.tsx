@@ -13,6 +13,13 @@ export type CartItem = {
   price: number | undefined;
 }
 
+export type CommunityItem = {
+  name: string | undefined;
+  selectedOptions: DesignOptions;
+  price: number | undefined;
+  shoeId: number | undefined;
+}
+
 export interface DesignOptions {
     sole: string;
     laces: string;

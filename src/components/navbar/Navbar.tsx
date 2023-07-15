@@ -43,8 +43,7 @@ export function Navbar() {
                 <NavbarButton label="About" link="/about"/>
                 <NavbarButton label="Collections" link="/collections"/>
                 <NavbarButton label ="Home" link="/"/>
-                <NavbarButton label ="News" link="/"/>
-                <NavbarButton label="Community" link="/"/>
+                <NavbarButton label="Community" link="/community"/>
 
             </div>
         </div>

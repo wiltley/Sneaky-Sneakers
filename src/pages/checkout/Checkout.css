@@ -6,14 +6,16 @@
 
 .checkout-stage-box {
     width: 100%;
-    height: 80px;
+    height: 60px;
     background-color: #DFDFDF;
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .checkout-stage-text {
     font-size: 1.6rem;
-    margin-top: 3%;
     margin-left: 5%;
 }
 
@@ -41,13 +43,41 @@
     width: 45%;
     margin-top: 80px;
     height: 80%;
-    background-color: black;
+    background-image: url('../../../public/placeholder.png');
 }
 
 .checkout-double-textfield {
     display: flex;
     width: 100%;
-    gap: 30px;
+    gap: 10px;
+}
+
+.checkout-double-textfield-40 {
+    width: 40%;
+}
+
+.checkout-double-textfield-30 {
+    width: 30%;
+}
+
+.checkout-double-textfield-70 {
+    width: 70%;
+}
+
+.checkout-double-textfield-60 {
+    width: 60%;
+}
+
+.checkout-double-textfield-80 {
+    width: 80%;
+}
+
+.checkout-double-textfield-20 {
+    width: 20%;
+}
+
+.checkout-double-textfield-second {
+
 }
 
 

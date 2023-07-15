@@ -13,8 +13,25 @@ export function Checkout() {
                     </div>
 
                     <div className="checkout-double-textfield">
-                        <CheckoutTextfield />
-                        <CheckoutTextfield />
+                        <CheckoutTextfield tag="First Name" />
+                        <CheckoutTextfield tag="Last Name"/>
+                    </div>
+
+
+                    <div className="checkout-double-textfield">
+                        <div className="checkout-double-textfield-80">
+                            <CheckoutTextfield tag="Billing Address" />
+                        </div>
+
+                        <div className="checkout-double-textfield-20">
+                            <CheckoutTextfield tag="Postal Code"/>
+                        </div>
+
+                    </div>
+
+                    <div className="checkout-double-textfield">
+                        <CheckoutTextfield tag="Country"/>
+                        <CheckoutTextfield tag="Province"/>
                     </div>
 
                     <div className="checkout-stage-box">
@@ -22,6 +39,10 @@ export function Checkout() {
                             2. Contact Details
                         </div>
                     </div>
+
+                    <CheckoutTextfield tag="Email"/>
+                    <CheckoutTextfield tag="Phone Number"/>
+
                     <div className="checkout-stage-box">
                         <div className="checkout-stage-text">
                             3. Payment Information

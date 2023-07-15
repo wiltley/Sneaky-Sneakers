@@ -5,7 +5,11 @@ import shoeDesigns from '../../data/shoeDesigns.json';
 import { Description } from '../../components/viewdesign/description/Description';
 import { useNavigate } from 'react-router-dom';
 
-export function ViewDesign() {
+interface viewDesignProps {
+    customId: number // if -1 then not custom
+}
+
+export function ViewDesign(props : viewDesignProps) {
 
     const navigate = useNavigate();
     const { shoeId } = useParams<{ shoeId: string }>();
@@ -22,7 +26,11 @@ export function ViewDesign() {
     }
 
     const redirectDesignPage = () => {
-        navigate(`/design/${shoeData.id}/${selectedSize}`);
+        if (props.customId === -1) {
+            navigate(`/design/${shoeData.id}/${selectedSize}`);
+        } else {
+            navigate(`/design/${shoeData.id}/${selectedSize}/${props.customId}`);
+        }
     }
 
     const continueButtonClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -33,6 +41,13 @@ export function ViewDesign() {
             //
         } else {
             redirectDesignPage();
+        }
+    }
+
+    const isCustomDesign = () => {
+        if (props.customId !== -1) {
+            return <>Community Custom </>
+
         }
     }
 
@@ -62,7 +77,7 @@ export function ViewDesign() {
 
                 <div className="design-view-info-side">
                     <div className="design-view-name-text">
-                        {shoeData.name}
+                        {isCustomDesign()} {shoeData.name}
                     </div>
                     <div className="design-view-style-text">
                         {shoeData.style}
