@@ -1,5 +1,5 @@
 .checkout-textfield-flex {
-    width: calc(100% - 5px);
+    width: 100%;
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -12,16 +12,11 @@
     margin-bottom: 5px;
 }
 
-
 .checkout-textfield {
-    width: calc(100%-10px);
-    height: 35px;
     border-style: solid;
     border-color: black;
-    border-width: 1px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    padding-left: 20px;
+    height: 20px;
+    border-width: 0.5px;
 }
 
 .checkout-textfield:focus {

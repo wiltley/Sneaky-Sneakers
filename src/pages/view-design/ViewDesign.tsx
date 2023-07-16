@@ -57,6 +57,13 @@ export function ViewDesign(props : viewDesignProps) {
         </>
     }
 
+    const continueButtonText = () => {
+        if (selectedSize === 0) {
+            return <>Select a size!</>
+        }
+        return <>Continue</>
+    }
+
     return <>
         <div className="design-view">
             <div className="design-view-flex">
@@ -93,7 +100,7 @@ export function ViewDesign(props : viewDesignProps) {
 
                     <div onClick={continueButtonClick} className="design-view-continue-button">
                         <div className="design-view-continue-button-text">
-                            Continue
+                            {continueButtonText()}
                         </div>
                     </div>
 

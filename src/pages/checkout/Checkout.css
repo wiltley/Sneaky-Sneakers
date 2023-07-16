@@ -14,6 +14,10 @@
     margin-bottom: 10px;
 }
 
+.checkout-margin-bottom {
+    margin-bottom: 10px;
+}
+
 .checkout-stage-text {
     font-size: 1.6rem;
     margin-left: 5%;
@@ -76,8 +80,28 @@
     width: 20%;
 }
 
-.checkout-double-textfield-second {
-
+.checkout-complete-button-section {
+    margin-top: 18px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.checkout-complete-button {
+    border-radius: 2%;
+    width: 60%;
+    height: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
 }
 
+.checkout-completion-modal {
+
+
+}
 

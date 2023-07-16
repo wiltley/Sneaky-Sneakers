@@ -1,0 +1,50 @@
+.checkout-confirmation {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.checkout-confirmation-modal {
+    position: fixed;
+    background-color: white;
+    height: 200px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-250px, -100px);
+    border-radius: 1%;
+}
+
+.checkout-confirmation-text {
+    font-size: 18px;
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.checkout-confirmation-button-section {
+   display: flex; 
+   width: 100%;
+   justify-content: center;
+   gap: 50px;
+}
+
+.checkout-confirmation-butt {
+    margin-top: 20px;
+    width: 150px;
+    height: 35px;
+    background-color: black;
+    border-radius: 5%;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.checkout-confirmation-butt-text {
+    margin-top: 7px;
+}
