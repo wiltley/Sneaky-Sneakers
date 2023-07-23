@@ -6,6 +6,7 @@ interface ShoeDesignProps {
   shoeName: string;
   shoePrice: string;
   shoeImage: string;
+  altText: string | undefined;
 }
 
 interface CustomShoeDesignProps {
@@ -32,7 +33,7 @@ export function ShoeDesign(props: ShoeDesignProps) {
 
   return (
       <div onClick={onClick} className="shoe-card">
-        <div className="shoe-card-image-section" style={containerStyle}></div>
+        <div role="img" className="shoe-card-image-section" aria-label={props.altText} style={containerStyle}></div>
         <div className="shoe-card-bottom-text">
           {props.shoeName} - {props.shoePrice}
         </div>

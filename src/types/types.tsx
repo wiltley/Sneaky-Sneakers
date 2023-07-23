@@ -5,6 +5,7 @@ export interface ShoeItem {
   description: string;
   price: number;
   image: string;
+  alt: string;
 }
 
 export type CartItem = {

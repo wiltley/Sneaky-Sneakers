@@ -25,7 +25,7 @@ export function FilterStyle(props: filterStyleProps) {
         }
 
         return <>
-            <div onClick={onClick} className="filter-option">
+            <div onClick={onClick} className="filter-option" role="button">
                 <div className={`filter-option-text-style ${filterBy === props.activeStyleFilter ? "active" : ""}`}>
                     {filterBy}
                 </div>

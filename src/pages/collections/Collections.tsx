@@ -81,6 +81,7 @@ export function Collections() {
                                 shoeName={shoe.name}
                                 shoePrice={shoe.price + "$"}
                                 shoeImage={shoe.image}
+                                altText={shoe.alt}
                             />
                         ))}
                     </div>
