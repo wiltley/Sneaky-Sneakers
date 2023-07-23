@@ -47,7 +47,9 @@
     width: 45%;
     margin-top: 80px;
     height: 80%;
-    background-image: url('../../../public/placeholder.png');
+    background-image: url('../../images/checkout.jpg');
+    background-size: contain;
+    background-position: center;
 }
 
 .checkout-double-textfield {

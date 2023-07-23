@@ -4,8 +4,11 @@ import { CartItem as Item } from '../../types/types';
 import { CartItemRemove } from '../../components/cart/cart-item-remove-popup/CartItemRemove';
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { t } from '../../utils/LanguageSelect'
 
 export function Cart() {
+    const lang = localStorage.getItem("lang");
+
     const storedItemsString = localStorage.getItem("cartItems");
     let cartItems: Item[] = [];
     if (storedItemsString) {
@@ -65,11 +68,10 @@ export function Cart() {
     }
 
     const checkoutButtonText = () => {
-
         if (cartItems.length === 0) {
-            return <> Cart Empty / No Checkout </>
+            return <> {t(lang, "Cart Empty / No Checkout", "Paiement non-disponible")}</>
         }
-        return <> Checkout </>
+        return <> {t(lang, "Checkout", "Aller à la caisse")} </>
 
     }
 
@@ -84,11 +86,11 @@ export function Cart() {
         {removePopUp()}
         <div className="cart">
             <div className="cart-cart-side">
-                <div className="cart-your-cart-text">Your Cart</div>
-                <div className="cart-mini-summary">Total ({cartItems.length} Items) - ${calculateSum()}</div>
+                <div className="cart-your-cart-text">{t(lang, "Your Cart", "Votre Panier")}</div>
+                <div className="cart-mini-summary">{"Total"} {cartItems.length} {t(lang,"Items" , "Articles du panier")} - ${calculateSum()}</div>
                 <div className="cart-items">
                     {cartItems.map((item, index) => (
-                        <CartItem key={index} item={item} id={index} setRemove={removeCartItem}/>
+                        <CartItem key={index} item={item} id={index} setRemove={removeCartItem} image={item.image}/>
                     ))}
                 </div>
             </div>
@@ -99,7 +101,7 @@ export function Cart() {
                     </div>
                 </div>
                 <div className="cart-order-summary-text">
-                    Order Summary
+                    {t(lang, 'Order Summary', 'Récapitulatif de la commande')}
                 </div>
                 <div className="cart-mini-details">
                     {cartItems.map((item, index) => (

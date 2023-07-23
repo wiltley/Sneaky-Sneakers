@@ -1,4 +1,5 @@
 import './SelectedShoe.css';
+import { t } from '../../../utils/LanguageSelect'
 
 
 interface selectedShoeProps {
@@ -7,6 +8,7 @@ interface selectedShoeProps {
 }
 
 export function SelectedShoe(props: selectedShoeProps) {
+    const lang = localStorage.getItem("lang")
 
     if (props.size === undefined) {
         props.size = "";
@@ -18,14 +20,13 @@ export function SelectedShoe(props: selectedShoeProps) {
     return <>
         <div className="selected-shoe">
             <div className="selected-shoe-main">
-                Selected Shoe
+                {t(lang, "Selected Shoe", "Chaussure sélectionnée")} 
                 <div className="selected-shoe-underline">
                 </div>
             </div>
 
-            <div>Shoe Name: {props.name} </div>
-
-            <div>Shoe Size: {size}</div>
+            <div>{t(lang, "Name:", "Nom:")} {props.name} </div>
+            <div>{t(lang,"Size:", "Taille:")} {size}</div>
         </div>
     </>
 

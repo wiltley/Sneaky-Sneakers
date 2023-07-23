@@ -5,6 +5,7 @@ import { ShoeItem } from '../../types/types';
 import { FilterStyle } from '../../components/collections/filter-style/FilterStyle';
 import { FilterPrice } from '../../components/collections/filter-price/FilterPrice';
 import { useState } from 'react';
+import { t } from '../../utils/LanguageSelect'
 
 
 interface ShoeDesignsData {
@@ -13,13 +14,10 @@ interface ShoeDesignsData {
 
 
 export function Collections() {
-
+    const lang = localStorage.getItem("lang");
     const { items }: ShoeDesignsData = shoeDesigns;
-
     const [shownItems, setShownItems] = useState(items);
-
     const [activeStyleFilter, setActiveStyleFilter] = useState("");
-
     const filterByStyle = (filterBy : string) => {
 
         if(filterBy === ""){
@@ -48,7 +46,7 @@ export function Collections() {
         <div className="collections">
             <div className="collections-header">
                 <div className="collections-header-text">
-                    Monthly Collection
+                    {t(lang, "Monthly Collection", "Collection mensuelle")}
                 </div>
             </div>
 
@@ -56,7 +54,7 @@ export function Collections() {
                 <div className="collections-body-filter-side">
                     <div className="filter-options-style">
                         <div className="filter-type-text">
-                            Style
+                            {"Style"}
 
                             <FilterStyle activeStyleFilter={activeStyleFilter} filterStyle={filterByStyle} />
 
@@ -64,7 +62,7 @@ export function Collections() {
                     </div>
                     <div className="filter-options-price">
                         <div className="filter-type-text">
-                            Price
+                            {t(lang, "Price", "Prix")}
 
                             <FilterPrice filterPrice={filterByPrice} />
                         </div>
@@ -82,6 +80,7 @@ export function Collections() {
                                 shoeId={shoe.id}
                                 shoeName={shoe.name}
                                 shoePrice={shoe.price + "$"}
+                                shoeImage={shoe.image}
                             />
                         ))}
                     </div>

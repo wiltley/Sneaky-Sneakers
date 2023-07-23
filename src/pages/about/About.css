@@ -46,6 +46,8 @@
 .about-image-side {
     width: 35%;
     height: 100%;
-    background-image: url('../../../public/placeholder.png');
+    background-image: url('../../images/about.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

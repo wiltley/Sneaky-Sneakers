@@ -36,12 +36,15 @@
 .design-image-section-container {
     position: absolute;
     height: 100%;
-    width: 90%;
+    width: 100%;
     top: 0;
     right: 0;
     background-image: url("../../../public/placeholder.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 .design-image-previews-section {
     position: absolute;
@@ -94,7 +97,7 @@
 
 .design-view-continue-button {
     margin-top: 20px;
-    width: 200px;
+    width: 230px;
     height: 45px;
     background-color: black;
     border-radius: 5px;
@@ -110,4 +113,14 @@
     width: 100%;
     text-align: center;
     font-size: 1.5rem;
+}
+
+.design-view-error {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: red;
 }

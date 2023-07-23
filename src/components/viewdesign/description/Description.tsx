@@ -43,7 +43,7 @@ export function Description(props: descriptionProps) {
             </div>
 
             <div className="description-header-text">
-                Design Description
+                Description
             </div>
 
             <div className={`description-content-text ${descriptionState === true ? `active` : ``}`}>

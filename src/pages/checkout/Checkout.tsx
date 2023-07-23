@@ -2,6 +2,7 @@ import './Checkout.css'
 import { useState } from 'react'
 import { CheckoutTextfield } from '../../components/checkout/textfield/CheckoutTextfield'
 import { CheckoutConfirmation } from '../../components/checkout/confirmation/CheckoutConfirmation'
+import { t } from '../../utils/LanguageSelect'
 
 // You see, I could do input validation for this, but I'm too lazy
 interface fieldInputs {
@@ -11,6 +12,8 @@ interface fieldInputs {
 }
 
 export function Checkout() {
+    const lang = localStorage.getItem("lang");
+
     const [fieldInput, setFieldInput] = useState<fieldInputs>({
         firstName: "",
         lastName: "",
@@ -58,9 +61,9 @@ export function Checkout() {
     const completeButtonText = () => {
 
         if(fieldInput.firstName === "" || fieldInput.lastName === "" || fieldInput.email === "") {
-            return <> Incomplete Fields! </>
+            return <> {t(lang, "Incomplete Fields!", "Champs incomplets!")} </>
         }
-        return <> Complete </>
+        return <>{t(lang, "Complete", "Terminez")}</>
     }
 
     const showConfirmationModal = () => {
@@ -80,59 +83,59 @@ export function Checkout() {
                 <div className="checkout-information-entry-side">
                     <div className="checkout-stage-box">
                         <div className="checkout-stage-text">
-                            1. Shipping & Billing
+                            {t(lang, "1. Shipping & Billing", "Expédition et facturation")}
                         </div>
                     </div>
 
                     <div className="checkout-double-textfield">
-                        <CheckoutTextfield tag="First Name" updateField={updateField} />
-                        <CheckoutTextfield tag="Last Name" updateField={updateField} />
+                        <CheckoutTextfield tag="First Name" tagName={t(lang, "First Name", "Prénom")} updateField={updateField} />
+                        <CheckoutTextfield tag="Last Name" tagName={t(lang, "Last Name", "Nom de famille")} updateField={updateField} />
                     </div>
 
 
                     <div className="checkout-double-textfield">
                         <div className="checkout-double-textfield-80">
-                            <CheckoutTextfield tag="Billing Address" updateField={undefined} />
+                            <CheckoutTextfield tag="" tagName={t(lang, "Billing Address","Adresse de facturation")} updateField={undefined} />
                         </div>
 
                         <div className="checkout-double-textfield-20">
-                            <CheckoutTextfield tag="Postal Code" updateField={undefined} />
+                            <CheckoutTextfield tag="" tagName={t(lang, "Postal Code", "Code Postal")} updateField={undefined} />
                         </div>
 
                     </div>
 
                     <div className="checkout-double-textfield">
-                        <CheckoutTextfield tag="Country" updateField={undefined} />
-                        <CheckoutTextfield tag="Province" updateField={undefined} />
+                        <CheckoutTextfield tag="" tagName={t(lang, "Country", "Pays")} updateField={undefined} />
+                        <CheckoutTextfield tag="" tagName={"Province"} updateField={undefined} />
                     </div>
 
                     <div className="checkout-stage-box">
                         <div className="checkout-stage-text">
-                            2. Contact Details
+                            {t(lang, "2. Contact Details", "Détails du contact")}
                         </div>
                     </div>
 
                     <div className="checkout-margin-bottom">
-                        <CheckoutTextfield tag="Email" updateField={updateField} />
-                        <CheckoutTextfield tag="Phone Number" updateField={undefined} />
+                        <CheckoutTextfield tag="Email" tagName="Email" updateField={updateField} />
+                        <CheckoutTextfield tag="" tagName={t(lang, "Phone Number", "Numéro de téléphone")} updateField={undefined} />
                     </div>
 
                     <div className="checkout-stage-box">
                         <div className="checkout-stage-text">
-                            3. Payment Information
+                            {t(lang, "3. Payment Information", "3. Informations de paiement")}
                         </div>
                     </div>
 
                     <div className="checkout-double-textfield">
-                        <CheckoutTextfield tag="Card Holder First Name" updateField={undefined} />
-                        <CheckoutTextfield tag="Card Hodler Last Name" updateField={undefined} />
+                        <CheckoutTextfield tag="" tagName={t(lang, "Card Holder First Name", "Prénom du titulaire de la carte")} updateField={undefined} />
+                        <CheckoutTextfield tag="" tagName={t(lang, "Card Holder Last Name", "Nom de famille du titulaire")} updateField={undefined} />
                     </div>
 
-                    <CheckoutTextfield tag="Credit/Debard Card #" updateField={undefined} />
+                    <CheckoutTextfield tag="" tagName={t(lang, "Credit/Debit Card #", "Carte de crédit / débit #")} updateField={undefined} />
 
                     <div className="checkout-double-textfield">
                         <div className="checkout-double-textfield-20">
-                            <CheckoutTextfield tag="CCV" updateField={undefined} />
+                            <CheckoutTextfield tag="CCV" tagName="CCV" updateField={undefined} />
                         </div>
 
                         <div className="checkout-complete-button-section">

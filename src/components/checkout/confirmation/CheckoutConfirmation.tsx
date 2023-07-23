@@ -1,5 +1,6 @@
 import './CheckoutConfirmation.css'
 import { useNavigate } from 'react-router-dom';
+import { t } from '../../../utils/LanguageSelect'
 
 interface checkoutConfirmationProps {
     name: string
@@ -7,6 +8,7 @@ interface checkoutConfirmationProps {
 }
 
 export function CheckoutConfirmation(props: checkoutConfirmationProps) {
+    const lang = localStorage.getItem("lang");
     const navigate = useNavigate();
 
     const onClick = (event : React.MouseEvent<HTMLDivElement>) => {
@@ -17,13 +19,13 @@ export function CheckoutConfirmation(props: checkoutConfirmationProps) {
         <div className="checkout-confirmation">
             <div className="checkout-confirmation-modal">
                 <div className="checkout-confirmation-text">
-                    Your ({props.name}) purchase has been succesfully completed. <br/>
-                    The receipt has been sent to your email: {props.email}.
+                    {t(lang, "Your", "Votre")} ({props.name}) {t(lang, "purchase has been succesfully completed.", "achat a été complété avec succès.")}<br/>
+                    {t(lang, "The receipt has been sent to your email:", "")} {props.email}.
                 </div>
                 <div className="checkout-confirmation-button-section">
                     <div onClick={onClick} className="checkout-confirmation-butt">
                         <div className="checkout-confirmation-butt-text">
-                            Go to Home
+                            {t(lang, "Go to Home", "Retour au page d'accueil")}
                         </div>
                     </div>
                 </div>

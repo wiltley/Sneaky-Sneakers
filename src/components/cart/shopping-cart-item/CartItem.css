@@ -15,7 +15,9 @@
     height: 100%;
     width: 225px;
     background-image: url("../../../../public/placeholder.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .cart-item-info {

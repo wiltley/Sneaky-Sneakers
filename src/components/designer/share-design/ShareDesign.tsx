@@ -1,10 +1,12 @@
 import './ShareDesign.css'
+import { t } from '../../../utils/LanguageSelect'
 
 interface shareDesignProps {
     closeModal: Function
 }
 
 export function ShareDesign(props : shareDesignProps) {
+    const lang = localStorage.getItem("lang")
 
     const onClick = (event : React.MouseEvent<HTMLDivElement>) => {
         event.preventDefault();
@@ -15,7 +17,7 @@ export function ShareDesign(props : shareDesignProps) {
         <div className="share-design">
             <div className="share-design-modal">
                 <div className="share-design-confirm-text">
-                    Your design was succesfully shared to the community!
+                    {t(lang, "Your design was succesfully shared to the community!", "Votre design a été partagé avec succès à la communauté!")}
                 </div>
                 <div className="share-design-confirm-button-section">
                     <div onClick={onClick} className="share-design-confirm-butt">

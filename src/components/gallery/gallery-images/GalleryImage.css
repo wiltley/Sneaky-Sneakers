@@ -9,6 +9,7 @@
     border-style: solid;
     border-width: 1px;
     background-image: url('../../../../public/placeholder.png');
-    background-size: cover;
-    cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }

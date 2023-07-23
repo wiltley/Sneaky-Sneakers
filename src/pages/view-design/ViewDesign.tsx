@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import shoeDesigns from '../../data/shoeDesigns.json';
 import { Description } from '../../components/viewdesign/description/Description';
 import { useNavigate } from 'react-router-dom';
+import { t } from '../../utils/LanguageSelect'
 
 interface viewDesignProps {
     customId: number // if -1 then not custom
@@ -11,19 +12,24 @@ interface viewDesignProps {
 
 export function ViewDesign(props : viewDesignProps) {
 
+    const lang = localStorage.getItem("lang")
     const navigate = useNavigate();
     const { shoeId } = useParams<{ shoeId: string }>();
     const [selectedSize, selectSize] = useState<number>(0);
 
     if (shoeId === undefined) {
-        return <div>Shoe data not found.</div>; // Handle the case when shoe data is not found
+        return <div className="design-view-error">Sorry, data for that shoe was not found! Please return to your previous page or click a button on the navbar.</div>; // Handle the case when shoe data is not found
     }
     const parsedShoeId = parseInt(shoeId, 10);
     const shoeData = shoeDesigns.items.find((item) => item.id === parsedShoeId);
 
     if (!shoeData) {
-        return <div>Shoe data not found.</div>; // Handle the case when shoe data is not found
+        return <div className="design-view-error">Sorry, data for that shoe was not found! Please return to your previous page or click a button on the navbar.</div>; // Handle the case when shoe data is not found
     }
+    const image = require(`../../images/${shoeData.image}`)
+    const containerStyle: React.CSSProperties = {
+        backgroundImage: `url(${image})`,
+    };
 
     const redirectDesignPage = () => {
         if (props.customId === -1) {
@@ -51,17 +57,17 @@ export function ViewDesign(props : viewDesignProps) {
         }
     }
 
-    const miniPreview = () => {
+    /*const miniPreview = () => {
         return <>
             <div className="design-mini-preview"></div>
         </>
-    }
+    }*/
 
     const continueButtonText = () => {
         if (selectedSize === 0) {
-            return <>Select a size!</>
+            return <>{t(lang, "Pick a size!", "Choisissez une taille!")}</>
         }
-        return <>Continue</>
+        return <>{t(lang, "Continue", "Continuer")}</>
     }
 
     return <>
@@ -70,14 +76,16 @@ export function ViewDesign(props : viewDesignProps) {
 
                 <div className="design-view-image-side">
                     <div className="design-image-side-flex">
-                        <div className="design-image-section-container">
+                        <div className="design-image-section-container" style={containerStyle}>
                         </div>
+                        {/* Maybe I'll implement this one day
                         <div className="design-image-previews-section">
                             {miniPreview()}
                             {miniPreview()}
                             {miniPreview()}
                             {miniPreview()}
                         </div>
+                        */}
                     </div>
                     <Description description={shoeData.description} />
                 </div>
@@ -93,7 +101,7 @@ export function ViewDesign(props : viewDesignProps) {
                         {shoeData.price}$
                     </div>
                     <div className="design-view-select-text">
-                        Select your size
+                        {t(lang , "Select your size", "Sélectionnez votre taille")}
                     </div>
 
                     <SizeSelect selectSize={selectSize} selectedSize={selectedSize} />

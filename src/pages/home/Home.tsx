@@ -1,10 +1,11 @@
 import "./Home.css"
 import { GalleryImage } from '../../components/gallery/gallery-images/GalleryImage'
 import { useNavigate } from 'react-router-dom';
+import {t} from "../../utils/LanguageSelect";
 
 export function Home() {
+    const lang = localStorage.getItem("lang");
     const navigate = useNavigate();
-
     const mainShopButton = (event : React.MouseEvent<HTMLDivElement>) => {
         navigate(`/collections`);
     }
@@ -14,7 +15,7 @@ export function Home() {
             <div className="home-main-image">
                 <div className="home-main-image-button">
                     <div onClick={mainShopButton} className="home-main-image-button-text">
-                        Shop
+                        {t(lang, "Shop", "Boutique")}
                     </div>
                 </div>
             </div>
@@ -22,27 +23,27 @@ export function Home() {
                 <div className="home-text-centerer">
                     <div className="home-text-section-flex">
                         <div className="home-text-section-main-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            {t(lang, "Elevate Your Style. Create Your Unique Sneaker Masterpiece. Step into the Future of Personalized Fashion.", "Élevez votre style. Créez votre chef-d'œuvre unique de baskets. Entrez dans le futur de la mode personnalisée.")}
                         </div>
                         <div className="home-text-section-sub-text">
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            {t(lang, "Welcome to our world of limitless creativity and personal expression. Discover a revolutionary platform where you can design and customize your very own sneakers, tailored to your unique style. Unleash your creativity, elevate your fashion game, and step into a realm of individuality. Embrace the future of personalized streetwear and fashion at its finest.", "Bienvenue dans notre monde de créativité illimitée et d'expression personnelle. Découvrez une plateforme révolutionnaire où vous pouvez concevoir et personnaliser vos propres baskets, adaptées à votre style unique. Libérez votre créativité, élevez votre jeu de mode et entrez dans un royaume d'individualité. Embrassez l'avenir du streetwear personnalisé et de la mode à son meilleur.")}
                         </div>
                     </div>
                 </div>
             </div>
             <div className="home-gallery-section">
                 <div className="home-gallery-section-header">
-                Latest/Upcoming Releases
+                    {t(lang, "Latest/Upcoming Releases",
+                        "Dernières et Prochaines Sorties")}
                 </div>
                 <div className="home-gallery">
-                    < GalleryImage />
-                    < GalleryImage />
-                    < GalleryImage />
-                    < GalleryImage />
-                    < GalleryImage />
+                    < GalleryImage image={"ramone.jpg"}/>
+                    < GalleryImage image={"kobe8.jpg"}/>
+                    < GalleryImage image={"bapesta.jpg"}/>
+                    < GalleryImage image={"foam.jpg"}/>
+                    < GalleryImage image={"aj1.jpg"}/>
                 </div>
             </div>
         </div>
-
     </>
 }

@@ -4,6 +4,7 @@ export interface ShoeItem {
   style: string;
   description: string;
   price: number;
+  image: string;
 }
 
 export type CartItem = {
@@ -11,6 +12,7 @@ export type CartItem = {
   selectedOptions: DesignOptions;
   size: string | undefined;
   price: number | undefined;
+  image: string | undefined;
 }
 
 export type CommunityItem = {
@@ -18,6 +20,7 @@ export type CommunityItem = {
   selectedOptions: DesignOptions;
   price: number | undefined;
   shoeId: number | undefined;
+  image: string | undefined;
 }
 
 export interface DesignOptions {

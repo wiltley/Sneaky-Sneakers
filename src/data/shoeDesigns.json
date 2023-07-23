@@ -5,49 +5,56 @@
       "name": "Air Jordan 1",
       "style": "Lifestyle",
       "description": "Description for Item 1",
-      "price": 300
+      "price": 300,
+      "image": "aj1.jpg"
     },
     {
       "id": 2,
       "name": "Air Force 1",
       "style": "Lifestyle",
       "description": "Description for Item 2",
-      "price": 150
+      "price": 150,
+      "image": "af1.png"
     },
     {
       "id": 3,
       "name": "Bape Sta",
       "style": "Hypebeast",
       "description": "Description for Item 3",
-      "price": 500 
+      "price": 500,
+      "image": "bapesta.jpg"
     },
     {
       "id": 4,
       "name": "Kobe 8",
       "style": "Basketball",
       "description": "Description for Item 4",
-      "price": 900
+      "price": 900,
+      "image": "kobe8.jpg"
     },
     {
       "id": 5,
       "name": "Yeezy Boost",
       "style": "Hypebeast",
-      "description": "Description for Item 4",
-      "price": 400
+      "description": "Description for Item 5",
+      "price": 400,
+      "image": "yzyboost.jpg"
     },
     {
       "id": 6,
-      "name": "Ramone Highs",
+      "name": "Ramones Highs",
       "style": "Lifestyle",
       "description": "Baby, I'm the fashion demon",
-      "price": 600
+      "price": 600,
+      "image": "ramone.jpg"
     },
     {
       "id": 7,
       "name": "Foam Runners",
       "style": "Running",
-      "description": "Baby, I'm the fashion demon",
-      "price": 250
+      "description": "Description for Item 7",
+      "price": 250,
+      "image": "foam.jpg"
     }
   ]
 }

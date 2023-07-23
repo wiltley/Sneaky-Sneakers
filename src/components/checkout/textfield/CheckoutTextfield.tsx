@@ -3,6 +3,7 @@ import { useState, ChangeEvent } from 'react'
 
 interface checkoutTextfieldProps {
     tag: string;
+    tagName: string;
     updateField: Function | undefined
 }
 export function CheckoutTextfield(props : checkoutTextfieldProps) {
@@ -18,7 +19,7 @@ export function CheckoutTextfield(props : checkoutTextfieldProps) {
 
     return <>
             <div className="checkout-textfield-flex">
-                <div className="checkout-field-name">{props.tag}</div>
+                <div className="checkout-field-name">{props.tagName}</div>
                 <input className="checkout-textfield" type="text" value={text} onChange={handleChange} />
             </div>
     </>

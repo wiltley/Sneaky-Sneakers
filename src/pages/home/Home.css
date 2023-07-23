@@ -14,7 +14,7 @@
     background-color: #D3D3D3;
     display: flex;
     position: relative;
-    background-image: url('../../../public/placeholder.png');
+    background-image: url('../../images/mainbackground.jpg');
     background-size: cover;
 }
 
@@ -25,6 +25,9 @@
     width: 12vw;
     height: 50px;
     background-color: black;
+    border-color: white;
+    border-style: solid;
+    border-width: 0.5px;
     transform: translate(50%, 0%);
     cursor: pointer;
     border-radius: 5%;

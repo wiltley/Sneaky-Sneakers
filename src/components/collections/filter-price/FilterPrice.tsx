@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./FilterPrice.css";
+import { t } from '../../../utils/LanguageSelect'
 
 interface FilterPriceProps {
   filterPrice: Function;
 }
 
 export function FilterPrice(props: FilterPriceProps) {
+  const lang = localStorage.getItem("lang");
   const [priceRange, setPriceRange] = useState([100, 100]);
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +26,7 @@ export function FilterPrice(props: FilterPriceProps) {
 
   return (
     <div className="filter-price">
-        <label htmlFor="min">Min Price:</label>
+        <label htmlFor="min">{t(lang, "Min Price:", "Prix Min.")}</label>
         <input
           type="range"
           id="min"
@@ -34,7 +36,7 @@ export function FilterPrice(props: FilterPriceProps) {
           value={priceRange[0]}
           onChange={handleSliderChange}
         />
-        <label htmlFor="max">Max Price:</label>
+        <label htmlFor="max">{t(lang, "Max Price:", "Prix Max.")}</label>
         <input
           type="range"
           id="max"
@@ -48,7 +50,7 @@ export function FilterPrice(props: FilterPriceProps) {
       <div className="filter-price-display">
         ${priceRange[0]} - ${priceRange[1]}
       </div>
-      <button onClick={handleFilterButtonClick}>Filter Price</button>
+      <button onClick={handleFilterButtonClick}>{t(lang, "Filter Price", "Filtrer par prix")}</button>
     </div>
   );
 }

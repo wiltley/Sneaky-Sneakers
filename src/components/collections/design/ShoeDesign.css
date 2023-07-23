@@ -4,14 +4,15 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    max-height: 300px;
+    max-height: 350px;
 }
 
 .shoe-card-image-section {
     flex-grow: 1;
     margin-bottom: 20px; /* Adjust the spacing as desired */
-    background-image: url("../../../../public/placeholder.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .shoe-card-bottom-text {

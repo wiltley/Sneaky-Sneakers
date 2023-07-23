@@ -1,12 +1,13 @@
 import "./CartItemRemove.css"
 import { CartItem } from "../../../types/types";
+import { t } from "../../../utils/LanguageSelect"
 
 interface cartItemProps {
     indexToRemove: number;
 }
 
 export function CartItemRemove(props: cartItemProps) {
-
+    const lang = localStorage.getItem("lang");
     const removeFromCart = (event: React.MouseEvent<HTMLDivElement>) => {
         // I should probably add a confirmation here but I cba...
         event.preventDefault();
@@ -39,17 +40,17 @@ export function CartItemRemove(props: cartItemProps) {
         <div className="cart-item-remove-popup">
             <div className="cart-item-remove-modal">
                 <div className="cart-item-remove-text">
-                    Are you sure you want to confirm this action?
+                    {t(lang, "Are you sure you want to confirm this action?", "Voulez-vous vraiment confirmer cette action?")}
                 </div>
                 <div className="cart-item-remove-button-section">
                     <div className="cart-item-remove-butt">
                         <div onClick={removeFromCart} className="cart-item-remove-butt-text">
-                            Confirm
+                            {t(lang, "Confirm", "Confirmer")}
                         </div>
                     </div>
                     <div onClick={cancelRemoveCart} className="cart-item-remove-butt">
                         <div className="cart-item-remove-butt-text">
-                            Cancel
+                            {t(lang, "Cancel", "Annuler")}
                         </div>
                     </div>
 

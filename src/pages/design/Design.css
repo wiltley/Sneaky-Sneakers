@@ -20,10 +20,12 @@
     position: relative;
     border-style: solid;
     border-radius: 1%;
-    border-size: 0.5px;
+    border-width: 0.05rem;
     border-color: black;
     background-image: url('../../../public/placeholder.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .design-top-info-section {
@@ -57,7 +59,7 @@
 
 .design-share {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     width: 240px;
     background-color: white;
@@ -70,12 +72,15 @@
 .design-share-icon {
     width: 30px;
     height: 30px;
+    margin-top: 3px;
     background-image: url('../../../public/share.png');
     background-size: contain;
+    background-repeat: no-repeat;
     margin-right: 10px;
 }
 
 .design-share-text {
+    width: 300px;
     margin-top: 3px;
     font-size: 1.2rem;
 }
@@ -100,7 +105,7 @@
     cursor: pointer;
     position: absolute;
     left: 50%;
-    top: 65%;
+    top: 55%;
     transform: translate(-50%, -50%);
     border-radius: 5%;
 }

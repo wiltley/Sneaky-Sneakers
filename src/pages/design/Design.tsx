@@ -10,13 +10,14 @@ import { DesignOptions, CartItem } from "../../types/types";
 import { DesignConfirmPopUp } from "../../components/designer/confirm-pop-up/DesignConfirmPopUp";
 import { ShareDesign } from "../../components/designer/share-design/ShareDesign";
 import { CommunityItem } from "../../types/types";
+import { t } from '../../utils/LanguageSelect'
 
 
 
 export function Design() {
+    const lang = localStorage.getItem("lang")
+
     let maxOptions = 6;
-
-
     let { shoeId, shoeSize, customId } = useParams<{ shoeId: string, shoeSize: string, customId: string }>();
     if (shoeId === undefined) {
         shoeId = "0";
@@ -31,6 +32,11 @@ export function Design() {
     const [showConfirmPopUp, setShowConfirmPopUp] = useState(false);
 
     const [showShareDesignPopUp, setShowShareDesignPopUp] = useState(false);
+
+    const image = require(`../../images/${shoeData?.image}`)
+    const containerStyle: React.CSSProperties = {
+        backgroundImage: `url(${image})`,
+    };
 
     const setDesignOptions = () : DesignOptions => {
         if (customId === undefined) {
@@ -83,17 +89,17 @@ export function Design() {
     const currentOption = (): string => {
         switch (indicator) {
             case 0:
-                return "Sole"
+                return t(lang, "Sole", "Semelle")
             case 1:
-                return "Laces"
+                return t(lang, "Laces", "Lacets")
             case 2:
-                return "Toecap"
+                return t(lang, "Toecap", "Embout")
             case 3:
-                return "Outshoe"
+                return t(lang, "Outshoe", "Extérieure")
             case 4:
-                return "Tongue"
+                return t(lang, "Tongue", "Languette")
             case 5:
-                return "Collar"
+                return t(lang, "Collar", "Collier")
             default:
                 return "Default"
         }
@@ -159,6 +165,7 @@ export function Design() {
             selectedOptions: selectedOptions,
             size: shoeSize,
             price: shoeData?.price,
+            image: shoeData?.image,
         };
 
         cartItems.push(itemToAdd);
@@ -191,7 +198,8 @@ export function Design() {
             name: shoeData?.name,
             selectedOptions: selectedOptions,
             price: shoeData?.price,
-            shoeId: parsedShoeId 
+            shoeId: parsedShoeId,
+            image: shoeData?.image,
         };
 
         communityItems.push(itemToAdd);
@@ -212,7 +220,7 @@ export function Design() {
         {shareDesignPopUp()}
         <div className="design">
             <div className="design-top">
-                <div className="design-top-image-section">
+                <div className="design-top-image-section" style={containerStyle}>
                     <div className="design-top-info-section">
                         <SelectedShoe name={shoeData?.name} size={shoeSize} />
                         <SelectedColors options={selectedOptions} />
@@ -227,7 +235,7 @@ export function Design() {
                             <div className="design-share-icon">
                             </div>
                             <div onClick={shareDesignClick} className="design-share-text">
-                                Share your design!
+                                {t(lang, "Share your design!", "Partagez votre design!")}
                             </div>
                         </div>
                     </div>
@@ -240,7 +248,7 @@ export function Design() {
                     <div onClick={confirmDesign} className="design-bottom-continue-area">
                         <div className="design-complete-button">
                             <div className="design-complete-button-text">
-                                Complete
+                                {t(lang, "Complete", "Terminez")}
                             </div>
                         </div>
                     </div>

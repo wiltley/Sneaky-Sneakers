@@ -5,6 +5,7 @@ interface ShoeDesignProps {
   shoeId: number | undefined;
   shoeName: string;
   shoePrice: string;
+  shoeImage: string;
 }
 
 interface CustomShoeDesignProps {
@@ -12,9 +13,17 @@ interface CustomShoeDesignProps {
   customId: number | undefined;
   shoeName: string;
   shoePrice: string;
+  shoeImage: string | undefined;
 }
 
+
 export function ShoeDesign(props: ShoeDesignProps) {
+
+  const image = require(`../../../images/${props.shoeImage}`)
+  const containerStyle: React.CSSProperties = {
+    backgroundImage: `url(${image})`,
+  };
+
   const navigate = useNavigate();
   const onClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -23,7 +32,7 @@ export function ShoeDesign(props: ShoeDesignProps) {
 
   return (
       <div onClick={onClick} className="shoe-card">
-        <div className="shoe-card-image-section"></div>
+        <div className="shoe-card-image-section" style={containerStyle}></div>
         <div className="shoe-card-bottom-text">
           {props.shoeName} - {props.shoePrice}
         </div>
@@ -32,6 +41,12 @@ export function ShoeDesign(props: ShoeDesignProps) {
 }
 
 export function CommunityShoeDesign(props: CustomShoeDesignProps) {
+
+  const image = require(`../../../images/${props.shoeImage}`)
+  const containerStyle: React.CSSProperties = {
+    backgroundImage: `url(${image})`,
+  };
+
   const navigate = useNavigate();
   const onClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -40,7 +55,7 @@ export function CommunityShoeDesign(props: CustomShoeDesignProps) {
 
   return (
       <div onClick={onClick} className="shoe-card">
-        <div className="shoe-card-image-section"></div>
+        <div className="shoe-card-image-section" style={containerStyle}></div>
         <div className="shoe-card-bottom-text">
           {props.shoeName} - {props.shoePrice}
         </div>
